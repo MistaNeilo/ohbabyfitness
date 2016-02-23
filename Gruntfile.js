@@ -1,7 +1,7 @@
 /*!
- * FireShell Gruntfile
- * http://getfireshell.com
- * @author Todd Motto
+ * Neil Kearney Starter Kit
+ * http://neilkearney.net
+ * @author Neil Kearney
  */
 
 'use strict';
@@ -50,7 +50,7 @@ module.exports = function (grunt) {
     },
 
     /**
-    * Run bower install 
+    * Run bower install
     */
     bower: {
       install: {
@@ -91,7 +91,7 @@ module.exports = function (grunt) {
      */
     connect: {
       options: {
-        port: 9000,
+        port: 9090,
         hostname: '*'
       },
       livereload: {
@@ -131,6 +131,17 @@ module.exports = function (grunt) {
         nonull: true,
         banner: '<%= tag.banner %>'
       }
+    },
+
+    copy: {
+      bsfonts: {
+        expand: true,
+        cwd: '<%= project.src %>/components/bootstrap-sass/assets/fonts/bootstrap/',
+        src: '**',
+        dest: '<%= project.assets %>/fonts/bootstrap/',
+        flatten: true,
+        filter: 'isFile',
+      },
     },
 
     /**
@@ -223,6 +234,7 @@ module.exports = function (grunt) {
     'bower',
     'sass:dev',
     'jshint',
+    'copy:bsfonts',
     'concat:dev',
     'connect:livereload',
     'open',
@@ -237,6 +249,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'sass:dist',
     'jshint',
+    'copy:bsfonts',
     'uglify'
   ]);
 

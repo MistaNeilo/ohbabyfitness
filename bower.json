@@ -2,9 +2,9 @@
   "name": "fireshell-bootstrap-sass",
   "version": "0.0.1",
   "authors": [
-    "Miguel Ruiz <myguelruiz@gmail.com>"
+    "Neil Kearney <mail@neilkearney.net>"
   ],
-  "description": "Fireshell with bootstrap (Sass)",
+  "description": "Fireshell with bootstrap (Sass) updated",
   "license": "MIT",
   "ignore": [
     "**/.*",
