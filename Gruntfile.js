@@ -142,6 +142,14 @@ module.exports = function (grunt) {
         flatten: true,
         filter: 'isFile',
       },
+      fontawesome: {
+        expand: true,
+        cwd: '<%= project.src %>/components/components-font-awesome/fonts/',
+        src: '**',
+        dest: '<%= project.assets %>/fonts/',
+        flatten: true,
+        filter: 'isFile',
+      },
     },
 
     /**
@@ -235,6 +243,7 @@ module.exports = function (grunt) {
     'sass:dev',
     'jshint',
     'copy:bsfonts',
+    'copy:fontawesome',
     'concat:dev',
     'connect:livereload',
     'open',
@@ -250,6 +259,7 @@ module.exports = function (grunt) {
     'sass:dist',
     'jshint',
     'copy:bsfonts',
+    'copy:fontawesome',
     'uglify'
   ]);
 
